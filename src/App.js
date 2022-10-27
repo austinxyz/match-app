@@ -1,25 +1,75 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect, useMemo } from "react";
+import axios from "axios";
+import { useTable, useSortBy } from "react-table";
+import Table from "./components/TeamTable"
+import TeamService from './services/TeamService';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function getStrategy(strategy) {
+    if (strategy == '0') {
+        return "Base Strategy";
+    }
+    if (strategy == '1') {
+        return "More Variable";
+    }
+    if (strategy == '2') {
+        return "Limit Lines";
+    }
+    return "Base Strategy";
+}
+
+function App({team, strategy}) {
+ const [data, setData] = useState([]);
+
+ const strategyName = getStrategy(strategy);
+
+ useEffect(() => {
+   TeamService.getLineups(team, strategy)
+     .then((res) => {
+       setData(res.data);
+     })
+     .catch((err) => console.log(err))
+ }, []);
+
+ const columns = useMemo(
+   () => [
+     {
+       Header: "Lineup: " + strategyName,
+       accessor: "teamName",
+       columns: [
+         {
+            Header: "#",
+            accessor: (_row: any, i : number) => i + 1
+         },
+         {
+           Header: "D1 <= 13",
+           accessor: "D1.pairInfo"
+         },
+         {
+           Header: "D2 <= 12",
+           accessor: "D2.pairInfo"
+         },
+         {
+           Header: "D3 <= 11",
+           accessor: "D3.pairInfo"
+         },
+         {
+           Header: "MD <= 10.5",
+           accessor: "MD.pairInfo"
+         },
+         {
+           Header: "WD <= 9.5",
+           accessor: "WD.pairInfo"
+         },
+       ]
+     }
+   ]
+ )
+
+ return (
+   <div>
+     <Table columns={columns} data={data} />
+   </div>
+ );
 }
 
 export default App;

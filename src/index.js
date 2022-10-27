@@ -2,12 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Team from './Team';
 import reportWebVitals from './reportWebVitals';
+import ComplexList from './TeamList'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const queryParameters = new URLSearchParams(window.location.search)
+const team = queryParameters.get("team")
+const teamName = queryParameters.get("teamName")
+
 root.render(
   <React.StrictMode>
-    <App />
+    <div class="flex flex-row">
+        <ComplexList />
+        <Team team={team} teamName={teamName}/>
+        <div>
+            <App team={team} strategy="0"/>
+            <App team={team} strategy="1"/>
+            <App team={team} strategy="2"/>
+        </div>
+    </div>
   </React.StrictMode>
 );
 
