@@ -2,13 +2,16 @@ import React, { useState, useEffect, useMemo } from "react";
 import Table from "./components/TeamTable"
 import TeamService from './services/TeamService';
 
-function Team({team, teamName}) {
+function Team({team}) {
  const [data, setData] = useState([]);
+
+ const [teamName, setTeamName] = useState(0);
 
  useEffect(() => {
    TeamService.getTeam(team)
      .then((res) => {
        setData(res.data.players);
+       setTeamName(res.data.name);
      })
      .catch((err) => console.log(err))
  }, []);

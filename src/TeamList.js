@@ -81,7 +81,7 @@ const ComplexList = () => (
                     ></path>
             </svg>
         </span>
-       <a href={"?team=" + item.id + "&teamName=" + item.name}>
+       <a href={"?team=" + item.id}>
         <span class="ml-1">{item.name}</span>
        </a>
       </li>

@@ -10,7 +10,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const queryParameters = new URLSearchParams(window.location.search)
 const team = queryParameters.get("team")
-const teamName = queryParameters.get("teamName")
 
 root.render(
   <React.StrictMode>
@@ -19,7 +18,7 @@ root.render(
             <ComplexList />
         </div>
         <div class="m-2 flex flow-row">
-            <Team team={team} teamName={teamName}/>
+            <Team team={team} />
             <div>
                 <App team={team} strategy="0"/>
                 <App team={team} strategy="1"/>

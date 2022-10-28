@@ -18,12 +18,13 @@ function getStrategy(strategy) {
 function App({team, strategy}) {
  const [data, setData] = useState([]);
 
- const strategyName = getStrategy(strategy);
+ const [strategyName, setStrategy] = useState(0);
 
  useEffect(() => {
    TeamService.getLineups(team, strategy)
      .then((res) => {
-       setData(res.data);
+       setData(res.data.preferedLineups);
+       setStrategy(getStrategy(strategy));
      })
      .catch((err) => console.log(err))
  }, []);
@@ -32,7 +33,6 @@ function App({team, strategy}) {
    () => [
      {
        Header: "Lineup: " + strategyName,
-       accessor: "teamName",
        columns: [
          {
             Header: "#",
