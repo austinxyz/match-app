@@ -68,7 +68,7 @@ const list = [
 ];
 
 const ComplexList = () => (
-  <nav class="flex flex-col bg-slate-700 w-80 h-screen px-4 pt-4 text-gray-900 border border-purple-900">
+  <nav class="flex flex-col bg-slate-700 w-60 h-screen px-2 py-2 text-gray-900 border border-purple-900">
   <ul class="ml-1">
     {list.map(item => (
       <li key={item.id} class="mb-1 px-0 py-2 text-gray-100 flex flex-row  border-gray-300 hover:text-black   hover:bg-gray-300  hover:font-bold rounded rounded-lg">

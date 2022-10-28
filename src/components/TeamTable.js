@@ -14,7 +14,7 @@ export default function Table({ columns, data }) {
  }, useSortBy)
 
  return (
-      <div class="align-middle inline-block min-w-full shadow overflow-hidden bg-white shadow-dashboard px-4 pt-2 rounded-bl-lg rounded-br-lg">
+      <div class="align-middle inline-block min-w-full shadow overflow-hidden bg-white shadow-dashboard px-2 py-2 rounded-tl-lg rounded-tr-lg rounded-bl-lg rounded-br-lg">
         <table {...getTableProps()} class="border-collapse border-spacing-0 border border-slate-400">
           <thead>
           {headerGroups.map(headerGroup => (

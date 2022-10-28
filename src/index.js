@@ -15,12 +15,16 @@ const teamName = queryParameters.get("teamName")
 root.render(
   <React.StrictMode>
     <div class="flex flex-row min-h-screen w-full bg-gray-100 text-gray-700" x-data="layout">
-        <ComplexList />
-        <Team team={team} teamName={teamName}/>
-        <div>
-            <App team={team} strategy="0"/>
-            <App team={team} strategy="1"/>
-            <App team={team} strategy="2"/>
+        <div class="bg-white shadow-dashboard px-2 pt-2 rounded-lg m-2">
+            <ComplexList />
+        </div>
+        <div class="m-2 flex flow-row">
+            <Team team={team} teamName={teamName}/>
+            <div>
+                <App team={team} strategy="0"/>
+                <App team={team} strategy="1"/>
+                <App team={team} strategy="2"/>
+            </div>
         </div>
     </div>
   </React.StrictMode>
