@@ -14,7 +14,7 @@ const teamName = queryParameters.get("teamName")
 
 root.render(
   <React.StrictMode>
-    <div class="flex flex-row">
+    <div class="flex flex-row min-h-screen w-full bg-gray-100 text-gray-700" x-data="layout">
         <ComplexList />
         <Team team={team} teamName={teamName}/>
         <div>
