@@ -1,17 +1,15 @@
 import React, { useState, useEffect, useMemo } from "react";
-import axios from "axios";
-import { useTable, useSortBy } from "react-table";
 import Table from "./components/TeamTable"
 import TeamService from './services/TeamService';
 
 function getStrategy(strategy) {
-    if (strategy == '0') {
+    if (strategy === '0') {
         return "Base Strategy";
     }
-    if (strategy == '1') {
+    if (strategy === '1') {
         return "More Variable";
     }
-    if (strategy == '2') {
+    if (strategy === '2') {
         return "Limit Lines";
     }
     return "Base Strategy";

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React from "react";
 import { useTable, useSortBy } from "react-table";
 
 export default function Table({ columns, data }) {

@@ -1,9 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
-import axios from "axios";
-import { useTable, useSortBy } from "react-table";
 import Table from "./components/TeamTable"
 import TeamService from './services/TeamService';
-
 
 function Team({team, teamName}) {
  const [data, setData] = useState([]);
