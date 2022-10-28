@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const LINEUP_REST_API_URL = 'http://localhost:8080/lineup';
-const TEAM_REST_API_URL = 'http://localhost:8080/team';
+const LINEUP_REST_API_URL = 'http://35.184.121.18:8080/lineup';
+const TEAM_REST_API_URL = 'http://35.184.121.18:8080/team';
 
 class TeamService {
 
@@ -23,7 +23,7 @@ class TeamService {
                     crossdomain: true,
                     headers : {
                         'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8',
-                        'Access-Control-Allow-Origin': 'http://localhost:3000'
+                        'Access-Control-Allow-Origin': '*'
                     }
                 });
 
