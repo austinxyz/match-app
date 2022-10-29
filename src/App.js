@@ -23,7 +23,7 @@ function App({team, strategy}) {
  useEffect(() => {
    TeamService.getLineups(team, strategy)
      .then((res) => {
-       setData(res.data);
+       setData(res.data.preferedLineups);
        setStrategy(getStrategy(strategy));
      })
      .catch((err) => console.log(err))
