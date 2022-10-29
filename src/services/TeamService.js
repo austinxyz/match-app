@@ -1,7 +1,9 @@
 import axios from 'axios'
 
-const LINEUP_REST_API_URL = 'http://35.184.121.18:8080/lineup';
-const TEAM_REST_API_URL = 'http://35.184.121.18:8080/team';
+const BASE_URL = 'http://35.184.121.18:8080';
+
+const LINEUP_REST_API_URL = BASE_URL + '/lineup';
+const TEAM_REST_API_URL = BASE_URL + '/team';
 
 class TeamService {
 
