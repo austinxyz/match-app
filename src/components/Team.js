@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
-import Table from "./components/TeamTable"
-import TeamService from './services/TeamService';
+import Table from "./TeamTable"
+import TeamService from '../services/TeamService';
 
 function Team({team}) {
  const [data, setData] = useState([]);
