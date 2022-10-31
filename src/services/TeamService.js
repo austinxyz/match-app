@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-//const BASE_URL = 'http://35.184.121.18:8080';
-const BASE_URL = 'http://localhost:8080';
+const BASE_URL = 'http://35.184.121.18:8080';
+//const BASE_URL = 'http://localhost:8080';
 
 const LINEUP_REST_API_URL = BASE_URL + '/lineup';
 const TEAM_REST_API_URL = BASE_URL + '/team';
