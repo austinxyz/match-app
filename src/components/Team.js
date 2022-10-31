@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
-import Table from "./TeamTable"
+import Table from "./Table"
 import TeamService from '../services/TeamService';
 
 function Team({team}) {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import TeamService from '../services/TeamService';
-import Table from './TeamTable'
+import Table from './Table'
 
 function getStrategy(strategy) {
     if (strategy === '0') {
@@ -23,7 +23,7 @@ function LineupTable({team, strategy}) {
  useEffect(() => {
    TeamService.getLineups(team, strategy)
      .then((res) => {
-       setData(res.data.preferedLineups);
+       setData(res.data);
        setStrategy(getStrategy(strategy));
      })
      .catch((err) => console.log(err))
@@ -40,23 +40,23 @@ function LineupTable({team, strategy}) {
          },
          {
            Header: "D1 <= 13",
-           accessor: "D1.pairInfo"
+           accessor: "D1.pair.pairInfo"
          },
          {
            Header: "D2 <= 12",
-           accessor: "D2.pairInfo"
+           accessor: "D2.pair.pairInfo"
          },
          {
            Header: "D3 <= 11",
-           accessor: "D3.pairInfo"
+           accessor: "D3.pair.pairInfo"
          },
          {
            Header: "MD <= 10.5",
-           accessor: "MD.pairInfo"
+           accessor: "MD.pair.pairInfo"
          },
          {
            Header: "WD <= 9.5",
-           accessor: "WD.pairInfo"
+           accessor: "WD.pair.pairInfo"
          },
        ]
      }
