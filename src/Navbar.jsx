@@ -21,6 +21,11 @@ function Navbar() {
                         Lineups
                     </Link>
                 </li>
+                <li>
+                    <Link class="hover:text-cyan-400 transition-colors hover:font-bold " to="/fixedlineup">
+                        Fixed Lines
+                    </Link>
+                </li>
             </ul>
         </div>
     </nav>
