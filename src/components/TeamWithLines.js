@@ -133,12 +133,14 @@ class TeamWithLines extends React.Component {
         <div class="w-50 min-w-fit">
         <Table columns={columns} data={this.state.data} />
         </div>
-        <div class="m-2 flex flow-row">
-            <LineTable name="D1" pair={this.state.d1pairs} ref={this.d1lineRef}/>
-            <LineTable name="D2" pair={this.state.d2pairs} ref={this.d2lineRef}/>
-            <LineTable name="D3" pair={this.state.d3pairs} ref={this.d3lineRef}/>
-            <LineTable name="MD" pair={this.state.mdpairs} ref={this.mdlineRef}/>
-            <LineTable name="WD" pair={this.state.wdpairs} ref={this.wdlineRef}/>
+        <div class="mx-2 w-250 align-middle inline-block min-w-min shadow overflow-hidden bg-white shadow-dashboard px-2 py-2 rounded-tl-lg rounded-tr-lg rounded-bl-lg rounded-br-lg">
+            <div class="flex flow-row">
+                <LineTable name="D1" pair={this.state.d1pairs} ref={this.d1lineRef}/>
+                <LineTable name="D2" pair={this.state.d2pairs} ref={this.d2lineRef}/>
+                <LineTable name="D3" pair={this.state.d3pairs} ref={this.d3lineRef}/>
+                <LineTable name="MD" pair={this.state.mdpairs} ref={this.mdlineRef}/>
+                <LineTable name="WD" pair={this.state.wdpairs} ref={this.wdlineRef}/>
+            </div>
         </div>
      </div>
      <button

@@ -41,7 +41,7 @@ class LineTable extends React.Component {
   render() {
     return (
      <div>
-        <table class="border-collapse border-spacing-2 px-2 border border-slate-400">
+        <table class="border-collapse border-spacing-2 px-2 mx-1 border border-slate-400">
               <thead>
                 <tr class="px-3 py-2 bg-slate-700 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
                   <th></th>
