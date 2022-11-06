@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Lineup from "./pages/Lineup";
 import Line from "./pages/Line";
 import FixedLineup from "./pages/FixedLineup";
+import FixedPairLineup from "./pages/FixedPairLineup";
 
 export default function App({team}) {
   return (
@@ -15,6 +16,7 @@ export default function App({team}) {
           <Route path="lineup" element={<Lineup team={team}/>} />
           <Route path="line" element={<Line team={team}/>} />
           <Route path="fixedlineup" element={<FixedLineup team={team}/>} />
+          <Route path="fixedpairlineup" element={<FixedPairLineup team={team}/>} />
         </Route>
       </Routes>
     </BrowserRouter>

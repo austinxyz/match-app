@@ -50,12 +50,11 @@ class LineTable extends React.Component {
               </thead>
               <tbody>
                 {this.props.pair.map((user) => (
-                  <tr key={user.pairInfo} className={user.selected ? "selected" : ""}>
-                    <td class="even:bg-slate-50 odd:bg-slate-400">
+                  <tr key={user.pairInfo} class="even:bg-slate-50 odd:bg-slate-400">
+                    <td class="px-3 py-2 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                       <input
                         type="checkbox"
                         checked={user.selected}
-                        className="form-check-input"
                         id="rowcheck{user.pairInfo}"
                         onChange={(e) => this.onItemCheck(e, user)}
                       />
