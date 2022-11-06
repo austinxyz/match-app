@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useRef } from "react";
+import React from "react";
 import Table from "./Table"
 import TeamService from '../services/TeamService';
 import PairTable from '../components/PairTable';
@@ -164,9 +164,11 @@ class TeamWithPairs extends React.Component {
             class="border border-indigo-500 bg-indigo-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-indigo-600 focus:outline-none focus:shadow-outline"
             onClick= {this.onClick}
      >
-     Get Selected Items
+     Run Lineups
      </button>
+     <span class="text-sm font-mono bg-green-300 rounded-md px-4 py-2 m-2">
      {this.state.selectedPairs}
+     </span>
      <Table columns={lineupColumns} data={this.state.lineup} />
    </div>
     );

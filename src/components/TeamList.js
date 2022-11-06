@@ -67,7 +67,7 @@ const list = [
   },
 ];
 
-const ComplexList = () => (
+const TeamList = () => (
   <nav class="flex flex-col bg-slate-700 w-60 px-2 py-2 text-gray-900 border border-purple-900">
   <ul class="ml-1">
     {list.map(item => (
@@ -90,4 +90,4 @@ const ComplexList = () => (
   </nav>
 );
 
-export default ComplexList;
+export default TeamList;

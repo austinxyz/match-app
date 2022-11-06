@@ -12,7 +12,7 @@ class LineTable extends React.Component {
   // Update List Item's state and Master Checkbox State
   onItemCheck(e, item) {
     let tempList = this.state.List;
-    if (tempList.length == 0 ) {
+    if (tempList.length === 0 ) {
         tempList = this.props.pair;
     }
 
