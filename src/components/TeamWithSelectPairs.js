@@ -25,7 +25,9 @@ class TeamWithSelectPairs extends React.Component {
 
  handleSelect(e) {
     let team=e.value;
-    this.setState({team:e.value});
+    this.setState({team:e.value,
+        selectedPairs: "",
+        lineup: []});
     TeamService.getTeam(team)
           .then((res) => {
             this.setState((state, props) => ({
@@ -218,7 +220,7 @@ class TeamWithSelectPairs extends React.Component {
     <div class="w-1/2 align-middle inline-block min-w-fit shadow bg-white shadow-dashboard px-2 py-2 rounded-tl-lg rounded-tr-lg rounded-bl-lg rounded-br-lg">
     <div class="m-2 w-full flow-row">
         <div>
-                <div class="flow-row min-w-fix px-3 py-2 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                <div class="flow-row w-3/4 pr-2 py-2 whitespace-no-wrap text-blue-900 text-sm leading-5">
                 <span class="py-2 pr-2 "> Team</span>
                 <Select
                     onChange={ (e) => this.handleSelect(e)}

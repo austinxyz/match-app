@@ -40,20 +40,18 @@ class PairSelectTable extends React.Component {
                 <tr class="even:bg-slate-50 odd:bg-slate-400">
                     <td class="w-1/4 px-3 py-2 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                     <Select
-                        placeholder="None"
                         onChange={ (e) => this.handleSelect1(e)}
                         values={[]}
                         options={players}
-                        autosize={false}
                         defaultValue={{ label: "Any", value: "" }}
                     />
                     </td>
                     <td class="w-1/4 px-3 py-2 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                     <Select
-                        placeholder="None"
                         onChange={ (e) => this.handleSelect2(e)}
                         values={[]}
                         options={players}
+                        defaultValue={{ label: "Any", value: "" }}
                     />
                     </td>
                  </tr>
