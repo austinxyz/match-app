@@ -246,7 +246,7 @@ class TeamWithSelectPairs extends React.Component {
      >
      Run Lineups
      </button>
-     <span class="text-sm font-mono bg-green-300 rounded-md px-4 py-2 m-2">
+     <span class="border-transparent rounded-lg text-center px-4 py-2 mx-auto md:mx-0 my-2 bg-gray-100 font-medium z-10 shadow-lg">
      {this.state.selectedPairs}
      </span>
      <Table columns={lineupColumns} data={this.state.lineup} />

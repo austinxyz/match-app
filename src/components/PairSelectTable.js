@@ -33,11 +33,12 @@ class PairSelectTable extends React.Component {
   }
 
   render() {
-    const players = this.props.players.map( player => ({
+    let players = this.props.players.map( player => ({
             label: player.name + " " + player.gender + " (" + player.utr + ")",
             value: player.name
         })
     );
+    players.push({label: "Any", value: ""});
     return (
       <div class="-mx-3 md:flex mb-6">
         <div class="md:w-1/2 px-3 mb-6 md:mb-0">
