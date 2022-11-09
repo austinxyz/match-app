@@ -220,8 +220,11 @@ class TeamWithSelectPairs extends React.Component {
     <div class="w-1/2 align-middle inline-block min-w-fit shadow bg-white shadow-dashboard px-2 py-2 rounded-tl-lg rounded-tr-lg rounded-bl-lg rounded-br-lg">
     <div class="m-2 w-full flow-row">
         <div>
-                <div class="flow-row w-3/4 pr-2 py-2 whitespace-no-wrap text-blue-900 text-sm leading-5">
-                <span class="py-2 pr-2 "> Team</span>
+                <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
+                <div class="py-2">
+                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
+                Team
+                </label>
                 <Select
                     onChange={ (e) => this.handleSelect(e)}
                     values={[]}
@@ -234,6 +237,7 @@ class TeamWithSelectPairs extends React.Component {
                 <PairSelectTable name="D3" players={this.state.data} ref={this.d3lineRef}/>
                 <PairSelectTable name="MD" players={this.state.data} ref={this.mdlineRef}/>
                 <PairSelectTable name="WD" players={this.state.data} ref={this.wdlineRef}/>
+                </div>
         </div>
      </div>
      <button
