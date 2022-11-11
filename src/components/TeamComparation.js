@@ -18,14 +18,14 @@ class TeamComparation extends React.Component {
 
   updateTeam1Lineup(evt) {
     let index = 0;
-    if (evt.target.value != null && evt.target.value !="") {
+    if (evt.target.value != null && evt.target.value !=="") {
         index = parseInt(evt.target.value) -1;
     }
     let state = this.team1Ref.current.state;
     let teamLineup1 = state.lineup;
     let teamName1 = state.teamName;
 
-    if (teamLineup1 == null) {
+    if (teamLineup1 == null || index > teamLineup1.length-1) {
         return;
     }
 
@@ -37,14 +37,14 @@ class TeamComparation extends React.Component {
 
   updateTeam2Lineup(evt) {
     let index = 0;
-    if (evt.target.value != null && evt.target.value !="") {
+    if (evt.target.value != null && evt.target.value !=="") {
         index = parseInt(evt.target.value) -1;
     }
     let state = this.team2Ref.current.state;
     let teamLineup2 = state.lineup;
     let teamName2 = state.teamName;
 
-    if (teamLineup2 == null) {
+    if (teamLineup2 == null || index > teamLineup2.length-1) {
         return;
     }
 

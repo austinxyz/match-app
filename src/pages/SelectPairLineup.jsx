@@ -1,5 +1,4 @@
 import React from 'react';
-import TeamList from '../components/TeamList';
 import TeamComparation from '../components/TeamComparation';
 
 function SelectPairLineup({team}) {

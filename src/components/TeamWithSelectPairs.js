@@ -1,5 +1,5 @@
 import React from "react";
-import Table from "./Table"
+import Table from "./Table";
 import TeamService from '../services/TeamService';
 import PairSelectTable from '../components/PairSelectTable';
 import Select from "react-select";
@@ -93,29 +93,6 @@ class TeamWithSelectPairs extends React.Component {
  };
 
  render() {
-    const columns = [
-      {
-        Header: "Team: " + this.state.teamName,
-        columns: [
-          {
-             Header: "#",
-             accessor: (_row: any, i : number) => i + 1
-          },
-          {
-            Header: "Name",
-            accessor: "name"
-          },
-          {
-            Header: "Gender",
-            accessor: "gender"
-          },
-          {
-            Header: "UTR",
-            accessor: "utr"
-          },
-        ]
-      }
-    ];
 
     const lineupColumns = [
       {
@@ -232,11 +209,11 @@ class TeamWithSelectPairs extends React.Component {
                     autosize={false}
                 />
                 </div>
-                <PairSelectTable name="D1" players={this.state.data} ref={this.d1lineRef}/>
-                <PairSelectTable name="D2" players={this.state.data} ref={this.d2lineRef}/>
-                <PairSelectTable name="D3" players={this.state.data} ref={this.d3lineRef}/>
-                <PairSelectTable name="MD" players={this.state.data} ref={this.mdlineRef}/>
-                <PairSelectTable name="WD" players={this.state.data} ref={this.wdlineRef}/>
+                    <PairSelectTable name="D1" players={this.state.data} ref={this.d1lineRef}/>
+                    <PairSelectTable name="D2" players={this.state.data} ref={this.d2lineRef}/>
+                    <PairSelectTable name="D3" players={this.state.data} ref={this.d3lineRef}/>
+                    <PairSelectTable name="MD" players={this.state.data} ref={this.mdlineRef}/>
+                    <PairSelectTable name="WD" players={this.state.data} ref={this.wdlineRef}/>
                 </div>
         </div>
      </div>

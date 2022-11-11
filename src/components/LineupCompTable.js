@@ -6,14 +6,6 @@ class LineupCompTable extends React.Component {
     super(props);
   }
 
-  getPairInfo(linePair) {
-    if (linePair != null) {
-        return linePair.pair.pairInfo;
-    }
-
-    return "";
-  }
-
   setupLineup(lineup1) {
     if (lineup1.D1 == null) {
         let team1=
