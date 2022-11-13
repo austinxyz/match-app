@@ -39,11 +39,16 @@ class TeamWithSelectPairs extends React.Component {
  }
 
  getLineString(lineRef) {
-       let lineString = lineRef.current.state.player1 + "," + lineRef.current.state.player2;
-       if (lineString === ",") {
-        lineString = "";
+       let players = [];
+       let player1 = lineRef.current.state.player1;
+       let player2 = lineRef.current.state.player2;
+       if (player1 !=null && player1 != "") {
+        players.push(player1);
        }
-       return lineString;
+       if (player2 !=null && player2 != "") {
+        players.push(player2);
+       }
+       return players.join(",");
  }
 
  getSelectPairs(d1, d2, d3, md, wd) {
