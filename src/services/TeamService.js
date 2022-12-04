@@ -11,7 +11,7 @@ class TeamService {
 
     getTeam(team){
 
-        var teamName = "ZJU_BYD";
+        var teamName = "ZJU-BYD";
 
         if (team != null) {
             teamName = team;
@@ -35,7 +35,7 @@ class TeamService {
 
     getLineups(team, strategy){
 
-        var teamName = "ZJU_BYD";
+        var teamName = "ZJU-BYD";
 
         if (team != null) {
             teamName = team;
@@ -59,7 +59,7 @@ class TeamService {
 
     getFixedLineup(team, d1, d2, d3, md, wd){
 
-        var teamName = "ZJU_BYD";
+        var teamName = "ZJU-BYD";
 
         if (team != null) {
             teamName = team;

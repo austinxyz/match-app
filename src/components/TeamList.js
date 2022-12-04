@@ -63,7 +63,7 @@ const list = [
   },
   {
     name: '浙大北高',
-    id: 'ZJU_BYD',
+    id: 'ZJU-BYD',
   },
 ];
 
