@@ -11,7 +11,7 @@ function Team({team}) {
    TeamService.getTeam(team)
      .then((res) => {
        setData(res.data.players);
-       setTeamName(res.data.name);
+       setTeamName(res.data.displayName);
      })
      .catch((err) => console.log(err))
  }, []);
@@ -37,6 +37,10 @@ function Team({team}) {
            Header: "UTR",
            accessor: "utr"
          },
+          {
+            Header: "Latest UTR",
+            accessor: "dUTR"
+          },
        ]
      }
    ]

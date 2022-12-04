@@ -5,6 +5,7 @@ const BASE_URL = 'http://localhost:8080';
 
 const LINEUP_REST_API_URL = BASE_URL + '/lineup';
 const TEAM_REST_API_URL = BASE_URL + '/team';
+const TEAMS_REST_API_URL = BASE_URL + '/teams';
 const FIXED_LINEUP_REST_API_URL = BASE_URL + '/fixedlineup';
 
 class TeamService {
@@ -18,6 +19,24 @@ class TeamService {
         }
 
         const teamURL =  TEAM_REST_API_URL + "?team=" + teamName;
+
+        return axios({
+                    method: 'get',
+                    url: teamURL,
+                    withCredentials: false,
+                    mode: 'no-cors',
+                    crossdomain: true,
+                    headers : {
+                        'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8',
+                        'Access-Control-Allow-Origin': "http://localhost:3000"
+                    }
+                });
+
+    };
+
+    getTeams(){
+
+        const teamURL =  TEAMS_REST_API_URL;
 
         return axios({
                     method: 'get',

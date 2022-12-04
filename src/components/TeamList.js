@@ -1,77 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect, useMemo } from "react";
+import TeamService from '../services/TeamService';
 
-const list = [
-  {
-    id: 'BD',
-    name: '北大',
-  },
-  {
-    id: 'BFB',
-    name: '北复伯',
-  },
-  {
-    id: 'DHF',
-    name: '大华附',
-  },
-  {
-    id: 'DQH',
-    name: '两岸清华',
-  },
-  {
-    name: '华山',
-    id: 'HS',
-  },
-  {
-    name: '航燕伯',
-    id: 'HYB',
-  },
-  {
-    name: '交大',
-    id: 'JD',
-  },
-  {
-    name: '交吉队',
-    id: 'JJ',
-  },
-  {
-    name: '科大南加伯克利',
-    id: 'KDB',
-  },
-  {
-    name: '科大侨大Rutgers',
-    id: 'KDQ',
-  },
-  {
-    name: '清华MIT',
-    id: 'QHM',
-  },
-  {
-    name: '圣吉伯爱之星',
-    id: 'SJB',
-  },
-{
-    name: '天南南',
-    id: 'TNN',
-  },
-  {
-    name: '台湾阿交伯',
-    id: 'TW',
-  },
-  {
-    name: '中大UCBD',
-    id: 'ZDBD',
-  },
-  {
-    name: '浙大北高',
-    id: 'ZJU-BYD',
-  },
-];
+function TeamList() {
 
-const TeamList = () => (
+ const [teams, setTeams] = useState([]);
+
+ useEffect(() => {
+   TeamService.getTeams()
+     .then((res) => {
+        setTeams(res.data);
+     })
+     .catch((err) => console.log(err))
+ }, []);
+
+
+ return (
   <nav class="flex flex-col bg-slate-700 w-60 px-2 py-2 text-gray-900 border border-purple-900">
   <ul class="ml-1">
-    {list.map(item => (
-      <li key={item.id} class="mb-1 px-0 py-2 text-gray-100 flex flex-row  border-gray-300 hover:text-black   hover:bg-gray-300  hover:font-bold rounded rounded-lg">
+    {teams.map(item => (
+      <li key={item.name} class="mb-1 px-0 py-2 text-gray-100 flex flex-row  border-gray-300 hover:text-black   hover:bg-gray-300  hover:font-bold rounded rounded-lg">
         <span>
             <svg class="fill-current h-5 w-5 " viewBox="0 0 24 24">
                 <path
@@ -81,13 +28,15 @@ const TeamList = () => (
                     ></path>
             </svg>
         </span>
-       <a href={"?team=" + item.id}>
-        <span class="ml-1">{item.name}</span>
+       <a href={"?team=" + item.name}>
+        <span class="ml-1">{item.displayName}</span>
        </a>
       </li>
     ))}
   </ul>
   </nav>
 );
+
+}
 
 export default TeamList;

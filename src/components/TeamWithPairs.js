@@ -108,6 +108,10 @@ class TeamWithPairs extends React.Component {
             Header: "UTR",
             accessor: "utr"
           },
+          {
+            Header: "Latest UTR",
+            accessor: "dUTR"
+          },
         ]
       }
     ];

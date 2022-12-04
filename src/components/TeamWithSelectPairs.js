@@ -13,7 +13,8 @@ class TeamWithSelectPairs extends React.Component {
       teamName: "",
       team: "",
       selectedPairs: "",
-      lineup: []
+      lineup: [],
+      teamlist: [],
     };
     this.d1lineRef = React.createRef();
     this.d2lineRef = React.createRef();
@@ -21,6 +22,23 @@ class TeamWithSelectPairs extends React.Component {
     this.mdlineRef = React.createRef();
     this.wdlineRef = React.createRef();
     this.onClick = this.onClick.bind(this);
+ }
+
+ componentDidMount() {
+    TeamService.getTeams()
+      .then((res) => {
+        let teams = res.data;
+        teams.map(function (x){
+            return x.label = x.displayName;
+        });
+        teams.map(function (x){
+            return x.value = x.name;
+        });
+        this.setState((state, props) => ({
+            teamlist : teams,
+        }));
+      })
+      .catch((err) => console.log(err))
  }
 
  handleSelect(e) {
@@ -32,7 +50,7 @@ class TeamWithSelectPairs extends React.Component {
           .then((res) => {
             this.setState((state, props) => ({
                 data : res.data.players,
-                teamName : res.data.name,
+                teamName : res.data.displayName,
             }));
           })
           .catch((err) => console.log(err))
@@ -131,72 +149,7 @@ class TeamWithSelectPairs extends React.Component {
       }
     ];
 
-    const teamlist = [
-      {
-        value: 'BD',
-        label: '北大',
-      },
-      {
-        value: 'BFB',
-        label: '北复伯',
-      },
-      {
-        value: 'DHF',
-        label: '大华附',
-      },
-      {
-        value: 'DQH',
-        label: '两岸清华',
-      },
-      {
-        label: '华山',
-        value: 'HS',
-      },
-      {
-        label: '航燕伯',
-        value: 'HYB',
-      },
-      {
-        label: '交大',
-        value: 'JD',
-      },
-      {
-        label: '交吉队',
-        value: 'JJ',
-      },
-      {
-        label: '科大南加伯克利',
-        value: 'KDB',
-      },
-      {
-        label: '科大侨大Rutgers',
-        value: 'KDQ',
-      },
-      {
-        label: '清华MIT',
-        value: 'QHM',
-      },
-      {
-        label: '圣吉伯爱之星',
-        value: 'SJB',
-      },
-      {
-        label: '天南南',
-        value: 'TNN',
-      },
-      {
-        label: '台湾阿交伯',
-        value: 'TW',
-      },
-      {
-        label: '中大UCBD',
-        value: 'ZDBD',
-      },
-      {
-        label: '浙大北高',
-        value: 'ZJU_BYD',
-      },
-    ];
+
 
     return (
     <div class="w-1/2 align-middle inline-block min-w-fit shadow bg-white shadow-dashboard px-2 py-2 rounded-tl-lg rounded-tr-lg rounded-bl-lg rounded-br-lg">
@@ -210,7 +163,7 @@ class TeamWithSelectPairs extends React.Component {
                 <Select
                     onChange={ (e) => this.handleSelect(e)}
                     values={[]}
-                    options={teamlist}
+                    options={this.state.teamlist}
                     autosize={false}
                 />
                 </div>
